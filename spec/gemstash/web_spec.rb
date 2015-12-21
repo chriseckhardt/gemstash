@@ -28,11 +28,14 @@ describe Gemstash::Web do
     end
     StubHttpBuilder.new
   end
+
   let(:app) do
     Gemstash::Web.new(http_client_builder: http_client_builder,
                       gemstash_env: test_env)
   end
-  let(:upstream) { "https://rubygems.org" }
+
+  let(:upstream) { "https://www.rubygems.org" }
+
   let(:gem_source) { Gemstash::GemSource::RubygemsSource }
 
   let(:rack_env) do
